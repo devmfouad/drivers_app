@@ -37,7 +37,7 @@ class _AppSplashScreenState extends State<AppSplashScreen> {
           children: [
             Image.asset("assets/images/splash.png"),
             const SizedBox(height: 25,),
-            const Text("User Drivers App" , style: TextStyle(
+            const Text("Uber Drivers App" , style: TextStyle(
               color: Colors.white,
               fontSize: 30,
               fontWeight: FontWeight.bold,
