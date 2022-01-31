@@ -1,4 +1,5 @@
 import 'package:drivers_app/screens/app_splash_screen.dart';
+import 'package:drivers_app/screens/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class DriversApp extends StatelessWidget {
     return MaterialApp(
       title: "Drivers App",
       debugShowCheckedModeBanner: false,
-      home: AppSplashScreen(),
+      home: RegisterScreen(),
     );
   }
 }

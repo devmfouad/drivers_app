@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:drivers_app/screens/main_screen.dart';
+import 'package:drivers_app/shared/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 
 class AppSplashScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _AppSplashScreenState extends State<AppSplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset("assets/images/splash.png"),
+            appLogo,
             const SizedBox(height: 25,),
             const Text("Uber Drivers App" , style: TextStyle(
               color: Colors.white,
