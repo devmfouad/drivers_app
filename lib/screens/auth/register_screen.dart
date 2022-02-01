@@ -1,3 +1,5 @@
+import 'package:drivers_app/screens/auth/car_detail_screen.dart';
+import 'package:drivers_app/screens/auth/login_screen.dart';
 import 'package:drivers_app/shared/constants.dart';
 import 'package:drivers_app/shared/widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -30,6 +31,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 60,),
                 appLogo,
                 const SizedBox(height: 25,),
+
+                const Text("Register as Driver" , style: TextStyle(color: Colors.grey,fontSize: 24),),
+
 
                 TextFormField(
                   controller: nameController,
@@ -108,8 +112,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   width: double.infinity,
                   child: ElevatedButton(
-
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CarDetailScreen()));
+                      },
                     style:  ElevatedButton.styleFrom(
                      primary: Colors.amber
                     ),
@@ -117,7 +122,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         color: Colors.grey
                       ),),
                   ),
-                )
+                ),
+
+                const SizedBox(height: 12,),
+
+                TextButton(
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const LoginScreen()));
+                  },
+                  child: const Text("have an account please login" ,
+                    style: TextStyle(color: Colors.grey),),
+                ),
               ],
             ),
           ),

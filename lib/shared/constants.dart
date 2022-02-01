@@ -1,1 +1,1 @@
-const double outerPadding = 12.0;
+const double outerPadding = 30.0;
