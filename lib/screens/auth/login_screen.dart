@@ -1,7 +1,9 @@
 import 'package:drivers_app/screens/auth/register_screen.dart';
 import 'package:drivers_app/screens/main_screen.dart';
 import 'package:drivers_app/shared/constants.dart';
+import 'package:drivers_app/shared/helpers/app_helper.dart';
 import 'package:drivers_app/shared/widgets/app_widgets.dart';
+import 'package:drivers_app/shared/widgets/custom_text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -30,49 +32,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const Text("Login as Driver" , style: TextStyle(color: Colors.grey,fontSize: 24),),
 
-              TextFormField(
-                controller: emailController,
-                keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
-                  hintText: "Your Email",
-                  hintStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12,
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey)
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey)
-                  ),
-                ),
-              ),
+              CustomTextFormFieldWidget(controller: emailController, hintText: "Your Email" , obscureText: false, keyboardType: TextInputType.emailAddress,),
+
               const SizedBox(height: 12,),
-              TextFormField(
-                controller: passwordController,
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  hintText: "Your Password",
-                  hintStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12,
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey)
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey)
-                  ),
-                ),
-              ),
+              CustomTextFormFieldWidget(controller: passwordController, hintText: "Your Password" , obscureText: true , keyboardType: TextInputType.text,),
+
 
               const SizedBox(height: 24,),
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const MainScreen()));
+                   // Navigator.of(context).push(MaterialPageRoute(builder: (_) => const MainScreen()));
+                    AppHelper.navigateToScreen(context, const MainScreen());
                   },
                   style:  ElevatedButton.styleFrom(
                       primary: Colors.amber
@@ -86,7 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
               TextButton(
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const RegisterScreen()));
+                    AppHelper.navigateToScreen(context, const RegisterScreen());
+                    //Navigator.of(context).push(MaterialPageRoute(builder: (_) => const RegisterScreen()));
                   },
                   child: const Text("Don not have an account create account now" ,
                   style: TextStyle(color: Colors.grey),),

@@ -1,5 +1,6 @@
 import 'package:drivers_app/shared/constants.dart';
 import 'package:drivers_app/shared/widgets/app_widgets.dart';
+import 'package:drivers_app/shared/widgets/custom_text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class CarDetailScreen extends StatefulWidget {
@@ -38,59 +39,35 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
 
                 const Text("Please Fill your car details" , style: TextStyle(color: Colors.grey,fontSize: 24),),
 
-
-                TextFormField(
+                CustomTextFormFieldWidget(
                   controller: carModelController,
+                  hintText: "Car Model" ,
+                  obscureText: false,
                   keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    hintText: "Car Model",
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12,
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
-                  ),
                 ),
+
                 const SizedBox(
                   height: 12,
                 ),
-                TextFormField(
+
+                CustomTextFormFieldWidget(
                   controller: carNumberController,
+                  hintText: "Car Number" ,
+                  obscureText: false,
                   keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    hintText: "Car Number",
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12,
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
-                  ),
                 ),
+
+
                 const SizedBox(
                   height: 12,
                 ),
-                TextFormField(
+                CustomTextFormFieldWidget(
                   controller: carColorController,
+                  hintText: "Car Color" ,
+                  obscureText: false,
                   keyboardType: TextInputType.text,
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    hintText: "Car Color",
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12,
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)),
-                  ),
                 ),
+
                 const SizedBox(
                   height: 12,
                 ),

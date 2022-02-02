@@ -1,7 +1,9 @@
 import 'package:drivers_app/screens/auth/car_detail_screen.dart';
 import 'package:drivers_app/screens/auth/login_screen.dart';
 import 'package:drivers_app/shared/constants.dart';
+import 'package:drivers_app/shared/helpers/app_helper.dart';
 import 'package:drivers_app/shared/widgets/app_widgets.dart';
+import 'package:drivers_app/shared/widgets/custom_text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -34,86 +36,46 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 const Text("Register as Driver" , style: TextStyle(color: Colors.grey,fontSize: 24),),
 
-
-                TextFormField(
+                CustomTextFormFieldWidget(
                   controller: nameController,
+                  hintText: "Your Name" ,
+                  obscureText: false,
                   keyboardType: TextInputType.text,
-                  decoration: const InputDecoration(
-                    hintText: "Your Name",
-                    hintStyle: TextStyle(
-                    color: Colors.grey,
-                      fontSize: 12,
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey)
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)
-                    ),
-                  ),
                 ),
+
                 const SizedBox(height: 12,),
-                TextFormField(
+                CustomTextFormFieldWidget(
                   controller: emailController,
+                  hintText: "Your Email" ,
+                  obscureText: false,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: "Your Email",
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12,
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)
-                    ),
-                  ),
                 ),
+
                 const SizedBox(height: 12,),
-                TextFormField(
+
+                CustomTextFormFieldWidget(
                   controller: passwordController,
+                  hintText: "Your Password" ,
+                  obscureText: true,
                   keyboardType: TextInputType.text,
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    hintText: "Your Password",
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12,
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)
-                    ),
-                  ),
                 ),
+
                 const SizedBox(height: 12,),
-                TextFormField(
-                  controller: phoneController,
+
+                CustomTextFormFieldWidget(
+                  controller: passwordController,
+                  hintText: "Your Phone" ,
+                  obscureText: false,
                   keyboardType: TextInputType.phone,
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    hintText: "Your Phone",
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12,
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey)
-                    ),
-                  ),
                 ),
+
                 const SizedBox(height: 24,),
                 Container(
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CarDetailScreen()));
+                        AppHelper.navigateToScreen(context, const CarDetailScreen());
+                        //Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CarDetailScreen()));
                       },
                     style:  ElevatedButton.styleFrom(
                      primary: Colors.amber
@@ -128,7 +90,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                 TextButton(
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const LoginScreen()));
+                    AppHelper.navigateToScreen(context, const LoginScreen());
+                    //Navigator.of(context).push(MaterialPageRoute(builder: (_) => const LoginScreen()));
                   },
                   child: const Text("have an account please login" ,
                     style: TextStyle(color: Colors.grey),),
