@@ -2,9 +2,12 @@ import 'package:drivers_app/screens/app_splash_screen.dart';
 import 'package:drivers_app/screens/auth/login_screen.dart';
 import 'package:drivers_app/screens/auth/register_screen.dart';
 import 'package:drivers_app/shared/styles/style.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const DriversApp());
 }
 
